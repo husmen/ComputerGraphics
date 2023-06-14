@@ -82,6 +82,10 @@ class Win(GlutWindow):
 	def calc_model(self):
 		self.model_matrix = glm.mat4(1)
 		# 2. Add code here to make the object rotate
+		angle = glm.radians(15.0 * time.time() % 360)
+		print(angle)
+		axis = glm.vec3(1, 0, 0) # rotate around X-axis
+		self.model_matrix = glm.rotate(self.model_matrix, angle, axis)
 
 
 
