@@ -46,65 +46,65 @@ vertex_buffer_data = [
                 #Front side
                 #draw the triangle 1 for front side, v1, v2, v3
                 -1.0,-1.0, 1.0, #v1
-                 1.0,-1.0, 1.0, #v2
-                 1.0, 1.0, 1.0, #v3
+                1.0,-1.0, 1.0, #v2
+                1.0, 1.0, 1.0, #v3
                 #draw the triangle 2 of front side, v3, v4, v1
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                1.0, 1.0, 1.0, #v3
+                -1.0, 1.0, 1.0, #v4
+                -1.0,-1.0, 1.0, #v1
                 
                 #Right side
                 #draw the triangle 3 of right side, v2, v6, v7
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                1.0,-1.0, 1.0, #v2
+                1.0,-1.0,-1.0, #v6
+                1.0, 1.0,-1.0, #v7
                 #draw the triangle 4 of right side, v7, v3, v2
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                1.0, 1.0,-1.0, #v7
+                1.0, 1.0, 1.0, #v3
+                1.0,-1.0, 1.0, #v2
                 
                 #Bottom side
                 #draw the triangle 5 of bottom side, v1, v6, v2
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                -1.0,-1.0, 1.0, #v1
+                1.0,-1.0,-1.0, #v6
+                1.0,-1.0, 1.0, #v2
 
                 #draw the triangle 6 of bottom side, v6, v1, v5
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                1.0,-1.0,-1.0, #v6
+                -1.0,-1.0, 1.0, #v1
+                -1.0,-1.0,-1.0, #v5
 
                 
                 #Top side
                 #draw the triangle 7 of top side, v4, v3, v7
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                -1.0, 1.0, 1.0, #v4
+                1.0, 1.0, 1.0, #v3
+                1.0, 1.0,-1.0, #v7
                 #draw the triangle 8 of top side, v7, v8, v4
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                1.0, 1.0,-1.0, #v7
+                -1.0, 1.0,-1.0, #v8
+                -1.0, 1.0, 1.0, #v4
                 
                 #Left side
                 #draw the triangle 9 of left side, v5, v1, v4
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                -1.0,-1.0,-1.0, #v5
+                -1.0,-1.0, 1.0, #v1
+                -1.0, 1.0, 1.0, #v4
                 #draw the triangle 10 of left side, v4, v8, v5
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                -1.0,-1.0, 1.0, #v4
+                1.0,-1.0,-1.0, #v8
+                -1.0,-1.0,-1.0, #v5
                 
                 #Back side
                 #draw the triangle 11 of back side, v6, v5, v8
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                 1.0,-1.0,-1.0, #v6
+                -1.0,-1.0,-1.0, #v5
+                1.0,-1.0, 1.0, #v8
 
                 #draw the triangle 12 of back side, v8, v7, v6
-                 0,0,0,
-		 0,0,0,
-		 0,0,0,
+                1.0,-1.0, 1.0, #v8
+                -1.0,-1.0, 1.0, #v7
+                1.0,-1.0,-1.0  #v6
 ]        
 
 
@@ -136,61 +136,61 @@ uv_buffer_data = [
 		1.0 / 3.0, 2.0 / 3.0, #v2
 		1.0 / 3.0, 3.0 / 3.0, #v3
                 #map the texture to the triangle 2 of side, v3, v4, v1
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                1.0 / 3.0, 3.0 / 3.0, #v3
+                0.0 / 3.0, 3.0 / 3.0, #v4
+                0.0 / 3.0, 2.0 / 3.0, #v1
                 
                 #Right side with texutre number 2
                 #map the texture to the triangle 1 of side, v2, v6, v7
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                1.0 / 3.0, 2.0 / 3.0, #v2
+                2.0 / 3.0, 2.0 / 3.0, #v6
+                2.0 / 3.0, 3.0 / 3.0, #v7
                 #map the texture to the triangle 2 of side, v7, v3, v2
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                2.0 / 3.0, 3.0 / 3.0, #v7
+                1.0 / 3.0, 3.0 / 3.0, #v3
+                1.0 / 3.0, 2.0 / 3.0, #v2
                 
                 #Bottom side with texutre number 3
                 #map the texture to the triangle 1 of side, v1, v6, v2
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                3.0 / 3.0, 2.0 / 3.0, #v1
+                2.0 / 3.0, 3.0 / 3.0, #v6
+                2.0 / 3.0, 2.0 / 3.0, #v2
 
                 #map the texture to the triangle 2 of side, v6, v1, v5
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                2.0 / 3.0, 3.0 / 3.0, #v6
+                3.0 / 3.0, 3.0 / 3.0, #v5
+                3.0 / 3.0, 2.0 / 3.0, #v1
 
                 
                 #Top side with texutre number 4
                 #map the texture to the triangle 1 of side, v4, v3, v7
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                0.0 / 3.0, 1.0 / 3.0, #v4
+                1.0 / 3.0, 1.0 / 3.0, #v3
+                1.0 / 3.0, 2.0 / 3.0, #v7
                 #map the texture to the triangle 2 of side, v7, v8, v4
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                1.0 / 3.0, 2.0 / 3.0, #v7
+                0.0 / 3.0, 2.0 / 3.0, #v8
+                0.0 / 3.0, 1.0 / 3.0, #v4
                 
                 #Let side with texutre number 5
                 #map the texture to the triangle 1 of side, v5, v1, v4
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                1.0 / 3.0, 1.0 / 3.0, #v5
+                2.0 / 3.0, 1.0 / 3.0, #v1
+                2.0 / 3.0, 2.0 / 3.0, #v4
                 #map the texture to the triangle 2 of side, v4, v8, v5
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                2.0 / 3.0, 2.0 / 3.0, #v4
+                1.0 / 3.0, 2.0 / 3.0, #v8
+                1.0 / 3.0, 1.0 / 3.0, #v5
                 
                 #Back side with texutre number 6
                 #map the texture to the triangle 1 of side, v6, v5, v8
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                 2.0 / 3.0, 1.0 / 3.0, #v6
+		3.0 / 3.0, 1.0 / 3.0, #v5
+		3.0 / 3.0, 2.0 / 3.0, #v8
                 #map the texture to the triangle 2 of side, v8, v7, v6
-                0.0, 0.0,
-		0.0, 0.0,
-		0.0, 0.0,
+                3.0 / 3.0, 2.0 / 3.0, #v8
+		2.0 / 3.0, 2.0 / 3.0, #v7
+		2.0 / 3.0, 1.0 / 3.0, #v6
 ]
 
 def read_file(file_path: str) -> str:
@@ -249,6 +249,13 @@ class Win(GlutWindow):
 		3. fill here your code to define data buffer for storing the
 		cube's texture (uv).
 		'''
+                self.context.texturebuffer = glGenBuffers(1)
+                glBindBuffer(GL_ARRAY_BUFFER, self.context.texturebuffer)
+                glBufferData(GL_ARRAY_BUFFER,
+                        len(uv_buffer_data) * 4,
+                        (GLfloat * len(uv_buffer_data))(*uv_buffer_data),
+                        GL_STATIC_DRAW)
+
                 
                 
         def init_context_load(self):
@@ -256,7 +263,40 @@ class Win(GlutWindow):
 		4. fill here your code to complete the init_context_load function to
 		load an external object instead of drawing one with raw triangle.
 		'''
+                self.shader_program = self.init_shaders()
+                self.context.mvp_location = glGetUniformLocation(self.shader_program, "mvp")
+                self.context.texture_location = glGetUniformLocation(self.shader_program,
+                                                                        "texture_sampler")
 
+                texture = TextureLoader("resources/object/uvmap.png")
+                self.context.textureGLID = texture.textureGLID
+
+                model = ObjLoader("resources/object/cube.obj").to_array_style()
+                vertex_buffer_data = model.vertexs
+                uv_buffer_data = model.texcoords
+
+                self.context.vertexbuffer  = glGenBuffers(1)
+                glBindBuffer(GL_ARRAY_BUFFER, self.context.vertexbuffer)
+                glBufferData(
+                        GL_ARRAY_BUFFER,
+                        len(vertex_buffer_data) * 4,
+                        (GLfloat * len(vertex_buffer_data))(*vertex_buffer_data),
+                        GL_STATIC_DRAW
+                )
+
+                if texture.inversedVCoords:
+                        for index in range(len(uv_buffer_data)):
+                                if(index % 2):
+                                        uv_buffer_data[index] = 1.0 - uv_buffer_data[index]
+
+                self.context.texturebuffer  = glGenBuffers(1)
+                glBindBuffer(GL_ARRAY_BUFFER, self.context.texturebuffer)
+                glBufferData(
+                        GL_ARRAY_BUFFER,
+                        len(uv_buffer_data) * 4,
+                        (GLfloat * len(uv_buffer_data))(*uv_buffer_data),
+                        GL_STATIC_DRAW
+                ) 
                 
 
         def calc_mvp(self):
@@ -293,7 +333,9 @@ class Win(GlutWindow):
                 '''
 		3. fill here your code to to enable and bind the texture buffer.
 		'''
-
+                glEnableVertexAttribArray(1)
+                glBindBuffer(GL_ARRAY_BUFFER, self.context.texturebuffer)
+                glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, None)
                 
                 glDrawArrays(GL_TRIANGLES, 0, int(len(vertex_buffer_data) / 3))
 
@@ -307,6 +349,6 @@ if __name__ == "__main__":
         win.controller = MVPController(win.update_if, width=win.width, height=win.height)
         win.init_opengl()
         
-        #win.init_context_load()
-        win.init_context_raw()
+        win.init_context_load()
+        # win.init_context_raw()
         win.run()

@@ -11,8 +11,17 @@ out vec2 uv;
 uniform mat4 mvp;
 
 void main(){
+	
+	float angle = 1.57;
+	mat4 rotation = mat4(
+        vec4(cos(angle), -sin(angle), 0.0, 0.0),
+        vec4(sin(angle), cos(angle), 0.0, 0.0),
+        vec4(0.0, 0.0, 1.0, 0.0),
+        vec4(0.0, 0.0, 0.0, 1.0)
+    );
+
 	// Output position of the vertex, in clip space : MVP * position
-	gl_Position =  mvp * vec4(vertex_position, 1);
+	gl_Position =  mvp * rotation * vec4(vertex_position, 2);
 	
 	// UV of the vertex. Just passing it to the fragment shader
 	uv = vertex_uv;
