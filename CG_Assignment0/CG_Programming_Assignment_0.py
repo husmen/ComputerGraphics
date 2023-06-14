@@ -38,14 +38,14 @@ class GlutWindow(object):
         
         '''2. change a different Polygon mode here'''
         #glPolygonMode(	GLenum face, GLenum mode): GL_FRONT ==> GL_FRONT_AND_BACK
-        gl.glPolygonMode(gl.GL_FRONT, gl.GL_LINE)
+        gl.glPolygonMode(gl.GL_FRONT_AND_BACK, gl.GL_LINE)
         glu.gluLookAt(4.0,3.0,-3.0, 0.0,0.0,0.0, 0.0,1.0,0.0)
         
         '''3. change a different model here'''
         #model types can be find here: https://www.opengl.org/resources/libraries/glut/spec3/node80.html
         #Note: different objects have different input parameters
         #glutSolidCube ==> glutSolidTeapot
-        oglut.glutSolidCube(1)
+        oglut.glutSolidTeapot(1)
 
     def display(self):    
         self.ogl_draw()
