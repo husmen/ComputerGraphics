@@ -13,6 +13,8 @@ from typing import List
 import ctypes
 
 
+start_time = time.time()
+
 @dataclass
 class Vertex:
     position: glm.vec3
@@ -215,9 +217,15 @@ class Win(GlutWindow):
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         glUseProgram(self.shader_program)
         mvp_stack = []
-        
+
+        time_angle = time.time() - start_time
+        earth_angle = glm.radians(90.0 * time_angle % 360) # 30 degrees per second for earth
+        moon_angle = glm.radians(90.0 / 27.32 * time_angle % 360) # moon takes 27.322 days to orbit earth
+        sun_angle = glm.radians(90.0 / 25.38 * time_angle % 360) # sun rotates every 25.38 days
+
         # Sun
         mvp_stack.append(glm.mat4(1.0))
+        # mvp_stack[-1] = glm.rotate(mvp_stack[-1], sun_angle, glm.vec3(0, 1, 0))
         self.model_matrix = mvp_stack[-1]
         self.calc_mvp()
         glBindTexture(GL_TEXTURE_2D, self.context.texture_sun.id)
@@ -234,6 +242,7 @@ class Win(GlutWindow):
         glBindTexture(GL_TEXTURE_2D, self.context.texture_earth.id)
         mvp_stack[-1] = glm.scale(mvp_stack[-1], 0.1 * glm.vec3(1, 1, 1))
         mvp_stack[-1] = glm.translate(mvp_stack[-1], glm.vec3(-20, 0, 3))
+        mvp_stack[-1] = glm.rotate(mvp_stack[-1], earth_angle, glm.vec3(0, 1, 0))
         self.model_matrix = mvp_stack[-1]
         self.calc_mvp()
         glUniformMatrix4fv(self.context.mvp_location, 1, GL_FALSE, glm.value_ptr(self.context.mvp))
@@ -243,7 +252,21 @@ class Win(GlutWindow):
         glDrawElements(GL_TRIANGLES, len(ico_inds), GL_UNSIGNED_SHORT, None)
 
         # Moon
+        glBindTexture(GL_TEXTURE_2D, self.context.texture_moon.id)
+        mvp_stack[-1] = glm.scale(mvp_stack[-1], 0.1 * glm.vec3(1, 1, 1))
+        mvp_stack[-1] = glm.translate(mvp_stack[-1], glm.rotate(glm.vec3(-20, 0, 3), moon_angle))
+        mvp_stack[-1] = glm.rotate(mvp_stack[-1], moon_angle, glm.vec3(0, 1, 0))
+        # mvp_stack[-1] = glm.translate(mvp_stack[-1], glm.vec3(revolution_distance_moon, 0, 0))  # Task 4: Moon revolution around Earth
+        self.model_matrix = mvp_stack[-1]
+        self.calc_mvp()
+        glUniformMatrix4fv(self.context.mvp_location, 1, GL_FALSE, glm.value_ptr(self.context.mvp))
+        glUniformMatrix4fv(self.context.m_location, 1, GL_FALSE, glm.value_ptr(self.model_matrix))
+        glUniform3f(self.context.color_location, 0.5, 0.5, 0.5)
+        glUniform1f(self.context.light_bool_location, 1.0)
+        glDrawElements(GL_TRIANGLES, len(ico_inds), GL_UNSIGNED_SHORT, None)
 
+
+        mvp_stack[0] = glm.rotate(mvp_stack[-1], sun_angle, glm.vec3(0, 1, 0))
         
         glUseProgram(0)
 
